@@ -13,6 +13,8 @@
 		1F4224F81F6B056600F38653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4224F61F6B056600F38653 /* Main.storyboard */; };
 		1F4224FA1F6B056600F38653 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F4224F91F6B056600F38653 /* Assets.xcassets */; };
 		1F4224FD1F6B056600F38653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4224FB1F6B056600F38653 /* LaunchScreen.storyboard */; };
+		827E6B9F1F74349C00219038 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E6B9E1F74349C00219038 /* Player.m */; };
+		827E6BA21F7434C200219038 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E6BA11F7434C200219038 /* Team.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		1F4224F91F6B056600F38653 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F4224FC1F6B056600F38653 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F4224FE1F6B056600F38653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		827E6B9E1F74349C00219038 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		827E6BA01F7434A800219038 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		827E6BA11F7434C200219038 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
+		827E6BA31F7434D000219038 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,10 @@
 				1F4224FB1F6B056600F38653 /* LaunchScreen.storyboard */,
 				1F4224FE1F6B056600F38653 /* Info.plist */,
 				1F4224ED1F6B056600F38653 /* Supporting Files */,
+				827E6B9E1F74349C00219038 /* Player.m */,
+				827E6BA01F7434A800219038 /* Player.h */,
+				827E6BA11F7434C200219038 /* Team.m */,
+				827E6BA31F7434D000219038 /* Team.h */,
 			);
 			path = HockeyCosom;
 			sourceTree = "<group>";
@@ -150,6 +160,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827E6BA21F7434C200219038 /* Team.m in Sources */,
+				827E6B9F1F74349C00219038 /* Player.m in Sources */,
 				1F4224F51F6B056600F38653 /* ViewController.m in Sources */,
 				1F4224F21F6B056600F38653 /* AppDelegate.m in Sources */,
 				1F4224EF1F6B056600F38653 /* main.m in Sources */,

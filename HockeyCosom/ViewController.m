@@ -9,9 +9,11 @@
 #import "ViewController.h"
 #import "Player.h"
 #import "Team.h"
+#import "MyCell.h"
 
 @interface ViewController ()
 - (IBAction)goToGameView:(id)sender;
+@property (weak, nonatomic) IBOutlet UICollectionView *team1PlayerCollectionView;
 
 
 // Team 1
@@ -101,5 +103,12 @@
         Player *test1 = [self.t1->playerArray objectAtIndex:i];
         NSLog(test1->name);
     }
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:2 inSection:0];
+//    MyCell *cell = [_team1PlayerCollectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    MyCell *cell = [_team1PlayerCollectionView cellForItemAtIndexPath:indexPath];
+    [cell.myLabel setText:@"fdsafdsf"];
+    
 }
 @end

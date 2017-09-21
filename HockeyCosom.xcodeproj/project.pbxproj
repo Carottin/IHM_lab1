@@ -15,6 +15,7 @@
 		1F4224FD1F6B056600F38653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4224FB1F6B056600F38653 /* LaunchScreen.storyboard */; };
 		827E6B9F1F74349C00219038 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E6B9E1F74349C00219038 /* Player.m */; };
 		827E6BA21F7434C200219038 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E6BA11F7434C200219038 /* Team.m */; };
+		827E6BAB1F74670A00219038 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E6BAA1F74670A00219038 /* MyCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		827E6BA01F7434A800219038 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		827E6BA11F7434C200219038 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
 		827E6BA31F7434D000219038 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
+		827E6BAA1F74670A00219038 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		827E6BAC1F74672800219038 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				827E6BA01F7434A800219038 /* Player.h */,
 				827E6BA11F7434C200219038 /* Team.m */,
 				827E6BA31F7434D000219038 /* Team.h */,
+				827E6BAA1F74670A00219038 /* MyCell.m */,
+				827E6BAC1F74672800219038 /* MyCell.h */,
 			);
 			path = HockeyCosom;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				1F4224F51F6B056600F38653 /* ViewController.m in Sources */,
 				1F4224F21F6B056600F38653 /* AppDelegate.m in Sources */,
 				1F4224EF1F6B056600F38653 /* main.m in Sources */,
+				827E6BAB1F74670A00219038 /* MyCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

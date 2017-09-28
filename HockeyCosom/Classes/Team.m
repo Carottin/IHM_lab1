@@ -14,8 +14,9 @@
 @implementation Team
 
 - (id)initialize:(NSString *)aName{
-    name=aName;
+    name = aName;
     playerArray = [[NSMutableArray alloc] init];
+    goal = 0;
     
     return self;
 }

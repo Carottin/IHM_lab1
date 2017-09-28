@@ -21,6 +21,15 @@
     return self;
 }
 
+- (void) addGoal{
+    but ++;
+}
+
+- (void) addPass{
+    pass ++;
+}
+//- (void) setBut:(int )
+
 
 
 @end

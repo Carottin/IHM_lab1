@@ -18,6 +18,9 @@
 }
 - (id)initialize:(NSString *)aName number:(int)number;
 
+-(void)addGoal;
+
+-(void)addPass;
 @end
 
 #endif /* Player_h */

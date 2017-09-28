@@ -10,9 +10,10 @@
 #import <UIKit/UIKit.h>
 #import "Team.h"
 
-@interface SecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property(nonatomic, retain) Team *t1;
 @property(nonatomic, retain) Team *t2;
+- (void)addStats:(Team *)team marqueur:(Player *)marqueur passeur1:(Player *)passeur1 passeur2:(Player *)passeur2 period:(NSString *) period;
 
 @end

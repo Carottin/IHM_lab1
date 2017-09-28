@@ -9,7 +9,8 @@
 #import "ViewController.h"
 #import "Player.h"
 #import "Team.h"
-#import "MyCell.h"
+#import "SecondViewController.h"
+
 
 @interface ViewController () 
 - (IBAction)goToGameView:(id)sender;
@@ -54,8 +55,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *team2Player5;
 @property (weak, nonatomic) IBOutlet UITextField *team2Player5Number;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableViewTeam1;
-@property (weak, nonatomic) IBOutlet UITableView *tableViewTeam2;
 
 
 @end
@@ -66,6 +65,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 
@@ -104,36 +104,17 @@
     for(int i=0 ; i<[self.t1->playerArray count]; i++) {
         Player *test1 = [self.t1->playerArray objectAtIndex:i];
         NSLog(test1->name);
+        NSLog([NSString stringWithFormat:@"%i", test1->number]);
     }
-    
-    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+        SecondViewController *mySecondViewController = (SecondViewController *)segue.destinationViewController;
+        mySecondViewController.t1 = _t1;
+        mySecondViewController.t2 = _t2;
+
 }
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    MyCell *cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:@"MyCell"];
-    if(cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"MyCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    
-    if(tableView == _tableViewTeam1){
-        cell.numLabel.text = [NSString stringWithFormat:@"%i",indexPath.row+1];
-        cell.nomLabel.text = @"tesstssss";
-        //cell.butLabel.text = ;
-        //cell.passLabel.text = ;
-    }
-    
-    return cell;
-}
 
 @end

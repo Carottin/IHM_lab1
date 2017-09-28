@@ -11,9 +11,8 @@
 #import "Team.h"
 #import "MyCell.h"
 
-@interface ViewController ()
+@interface ViewController () 
 - (IBAction)goToGameView:(id)sender;
-@property (weak, nonatomic) IBOutlet UICollectionView *team1PlayerCollectionView;
 
 
 // Team 1
@@ -36,7 +35,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *team1Player5Number;
 
 
-
 // Team 2
 @property(nonatomic, retain) Team *t2;
 @property (weak, nonatomic) IBOutlet UITextField *team2Name;
@@ -56,10 +54,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *team2Player5;
 @property (weak, nonatomic) IBOutlet UITextField *team2Player5Number;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableViewTeam1;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewTeam2;
+
 
 @end
 
-@implementation ViewController
+
+@implementation ViewController 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -104,11 +106,34 @@
         NSLog(test1->name);
     }
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:2 inSection:0];
-//    MyCell *cell = [_team1PlayerCollectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    MyCell *cell = [_team1PlayerCollectionView cellForItemAtIndexPath:indexPath];
-    [cell.myLabel setText:@"fdsafdsf"];
     
 }
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    MyCell *cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:@"MyCell"];
+    if(cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"MyCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    if(tableView == _tableViewTeam1){
+        cell.numLabel.text = [NSString stringWithFormat:@"%i",indexPath.row+1];
+        cell.nomLabel.text = @"tesstssss";
+        //cell.butLabel.text = ;
+        //cell.passLabel.text = ;
+    }
+    
+    return cell;
+}
+
 @end

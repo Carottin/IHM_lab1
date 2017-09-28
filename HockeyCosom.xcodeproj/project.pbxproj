@@ -13,6 +13,7 @@
 		1F4224F81F6B056600F38653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4224F61F6B056600F38653 /* Main.storyboard */; };
 		1F4224FA1F6B056600F38653 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F4224F91F6B056600F38653 /* Assets.xcassets */; };
 		1F4224FD1F6B056600F38653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4224FB1F6B056600F38653 /* LaunchScreen.storyboard */; };
+		4C78257B1F7CAF210077FE6E /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C78257A1F7CAF210077FE6E /* MyCell.xib */; };
 		827E6B9F1F74349C00219038 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E6B9E1F74349C00219038 /* Player.m */; };
 		827E6BA21F7434C200219038 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E6BA11F7434C200219038 /* Team.m */; };
 		827E6BAB1F74670A00219038 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E6BAA1F74670A00219038 /* MyCell.m */; };
@@ -29,6 +30,7 @@
 		1F4224F91F6B056600F38653 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F4224FC1F6B056600F38653 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F4224FE1F6B056600F38653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C78257A1F7CAF210077FE6E /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		827E6B9E1F74349C00219038 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		827E6BA01F7434A800219038 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		827E6BA11F7434C200219038 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
@@ -67,21 +69,12 @@
 		1F4224EC1F6B056500F38653 /* HockeyCosom */ = {
 			isa = PBXGroup;
 			children = (
-				1F4224F01F6B056600F38653 /* AppDelegate.h */,
-				1F4224F11F6B056600F38653 /* AppDelegate.m */,
-				1F4224F31F6B056600F38653 /* ViewController.h */,
-				1F4224F41F6B056600F38653 /* ViewController.m */,
+				4C22ABC61F75B68400A87EEC /* Classes */,
 				1F4224F61F6B056600F38653 /* Main.storyboard */,
 				1F4224F91F6B056600F38653 /* Assets.xcassets */,
 				1F4224FB1F6B056600F38653 /* LaunchScreen.storyboard */,
 				1F4224FE1F6B056600F38653 /* Info.plist */,
 				1F4224ED1F6B056600F38653 /* Supporting Files */,
-				827E6B9E1F74349C00219038 /* Player.m */,
-				827E6BA01F7434A800219038 /* Player.h */,
-				827E6BA11F7434C200219038 /* Team.m */,
-				827E6BA31F7434D000219038 /* Team.h */,
-				827E6BAA1F74670A00219038 /* MyCell.m */,
-				827E6BAC1F74672800219038 /* MyCell.h */,
 			);
 			path = HockeyCosom;
 			sourceTree = "<group>";
@@ -92,6 +85,32 @@
 				1F4224EE1F6B056600F38653 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FF67AD81F7D6DAF00CDBF81 /* MyCell */ = {
+			isa = PBXGroup;
+			children = (
+				827E6BAA1F74670A00219038 /* MyCell.m */,
+				827E6BAC1F74672800219038 /* MyCell.h */,
+				4C78257A1F7CAF210077FE6E /* MyCell.xib */,
+			);
+			name = MyCell;
+			sourceTree = "<group>";
+		};
+		4C22ABC61F75B68400A87EEC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1FF67AD81F7D6DAF00CDBF81 /* MyCell */,
+				1F4224F01F6B056600F38653 /* AppDelegate.h */,
+				1F4224F11F6B056600F38653 /* AppDelegate.m */,
+				1F4224F31F6B056600F38653 /* ViewController.h */,
+				1F4224F41F6B056600F38653 /* ViewController.m */,
+				827E6B9E1F74349C00219038 /* Player.m */,
+				827E6BA01F7434A800219038 /* Player.h */,
+				827E6BA11F7434C200219038 /* Team.m */,
+				827E6BA31F7434D000219038 /* Team.h */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +139,7 @@
 		1F4224E21F6B056500F38653 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Peyrot, Michael";
 				TargetAttributes = {
 					1F4224E91F6B056500F38653 = {
@@ -153,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F4224FD1F6B056600F38653 /* LaunchScreen.storyboard in Resources */,
+				4C78257B1F7CAF210077FE6E /* MyCell.xib in Resources */,
 				1F4224FA1F6B056600F38653 /* Assets.xcassets in Resources */,
 				1F4224F81F6B056600F38653 /* Main.storyboard in Resources */,
 			);
@@ -206,7 +226,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -214,7 +236,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -255,7 +281,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -263,7 +291,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

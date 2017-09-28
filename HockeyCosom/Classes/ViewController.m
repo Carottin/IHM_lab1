@@ -11,9 +11,8 @@
 #import "Team.h"
 #import "MyCell.h"
 
-@interface ViewController ()
+@interface ViewController () 
 - (IBAction)goToGameView:(id)sender;
-@property (weak, nonatomic) IBOutlet UICollectionView *team1PlayerCollectionView;
 
 
 // Team 1
@@ -34,7 +33,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *team1Player5;
 @property (weak, nonatomic) IBOutlet UITextField *team1Player5Number;
-
 
 
 // Team 2
@@ -59,7 +57,8 @@
 
 @end
 
-@implementation ViewController
+
+@implementation ViewController 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -104,11 +103,29 @@
         NSLog(test1->name);
     }
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:2 inSection:0];
-//    MyCell *cell = [_team1PlayerCollectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    MyCell *cell = [_team1PlayerCollectionView cellForItemAtIndexPath:indexPath];
-    [cell.myLabel setText:@"fdsafdsf"];
     
 }
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    MyCell *cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:@"MyCell"];
+    if(cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"MyCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.testLab.text = [NSString stringWithFormat:@"This is title label %i",indexPath.row+1];
+    
+    return cell;
+}
+
 @end

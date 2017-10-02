@@ -212,7 +212,7 @@ NSInteger *passeur1Index = 0;
               passeur2:[self pickerView:_passeur2PickerView titleForRow:[_passeur2PickerView selectedRowInComponent:0] forComponent:0]
                 period:_numPeriod.text];
     }
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GOAL" message:@"le but est bien entré" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GOAL !" message:[statsArray lastObject]  preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
@@ -221,7 +221,7 @@ NSInteger *passeur1Index = 0;
 
 
 - (void)addStats:(Team *)team marqueur:(NSString *)marqueur passeur1:(NSString *)passeur1 passeur2:(NSString *)passeur2 period:(NSString *) period{
-    [statsArray addObject: [NSString stringWithFormat: @"Periode %@, Equipe : %@ -BUT : %@, AIDES : %@ %@", period, team->name, marqueur, passeur1, passeur2]];
+    [statsArray addObject: [NSString stringWithFormat: @"Période %@, Équipe : %@ - But : %@, Aides : %@, %@", period, team->name, marqueur, passeur1, passeur2]];
 
 }
 

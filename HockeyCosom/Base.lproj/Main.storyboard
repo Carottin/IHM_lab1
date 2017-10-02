@@ -187,7 +187,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="goToGameView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UQd-Yw-ZPk"/>
-                                    <segue destination="GFf-PR-5Eb" kind="show" id="Z7V-kb-U8p"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -225,7 +224,7 @@
         <!--Second View Controller-->
         <scene sceneID="kCb-Jy-DV9">
             <objects>
-                <viewController id="GFf-PR-5Eb" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="GFf-PR-5Eb" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JYd-Hv-TjK"/>
                         <viewControllerLayoutGuide type="bottom" id="NtC-u5-edz"/>

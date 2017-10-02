@@ -101,20 +101,39 @@
     Player * p5t2 = [[Player alloc] initialize:_team2Player5.text number:[_team2Player5Number.text intValue]];
     [self.t2->playerArray addObject:p5t2];
     
-    for(int i=0 ; i<[self.t1->playerArray count]; i++) {
-        Player *test1 = [self.t1->playerArray objectAtIndex:i];
-        NSLog(test1->name);
-        NSLog([NSString stringWithFormat:@"%i", test1->number]);
+    for(int i=0 ; i<_t1->playerArray.count-1 ; i++){
+        for(int j=i+1 ; j<_t1->playerArray.count ; j++){
+            if(((Player *)_t1->playerArray[i])->number == ((Player *)_t1->playerArray[j])->number){
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Erreur" message:@"Les joueurs de la même équipe ne peuvent pas avoir le même numéro!" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+                [alert addAction:defaultAction];
+                [self presentViewController:alert animated:YES completion:nil];
+                return;
+            }
+        }
     }
+    
+    for(int i=0 ; i<_t2->playerArray.count-1 ; i++){
+        for(int j=i+1 ; j<_t2->playerArray.count ; j++){
+            if(((Player *)_t2->playerArray[i])->number == ((Player *)_t2->playerArray[j])->number){
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Erreur" message:@"Les joueurs de la même équipe ne peuvent pas avoir le même numéro!" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+                [alert addAction:defaultAction];
+                [self presentViewController:alert animated:YES completion:nil];
+                return;
+            }
+        }
+    }
+    
+
+    SecondViewController *mySecondViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"SecondViewController"];
+    mySecondViewController.t1 = _t1;
+    mySecondViewController.t2 = _t2;
+
+    [self showViewController:mySecondViewController sender:self];
+    
+    
 }
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-        SecondViewController *mySecondViewController = (SecondViewController *)segue.destinationViewController;
-        mySecondViewController.t1 = _t1;
-        mySecondViewController.t2 = _t2;
-
-}
-
 
 
 @end

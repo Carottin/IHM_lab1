@@ -36,6 +36,8 @@
 
 @implementation SecondViewController 
 NSMutableArray *statsArray;
+NSInteger *marqueurIndex = 0;
+NSInteger *passeur1Index = 0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -81,7 +83,6 @@ NSMutableArray *statsArray;
         cell.butLabel.text = [NSString stringWithFormat:@"%i", ((Player *)[self.t2->playerArray objectAtIndex:indexPath.row])->but];
         cell.passLabel.text = [NSString stringWithFormat:@"%i", ((Player *)[self.t2->playerArray objectAtIndex:indexPath.row])->pass];
     }
-    // TO DO
 
     return cell;
 }
@@ -108,7 +109,7 @@ NSMutableArray *statsArray;
         else
             return _t2->name;
     }
-    else{
+    else if(pickerView == _marqueurPickerView){
         if([_teamPickerView selectedRowInComponent:0] == 0){
             return ((Player *)[_t1->playerArray objectAtIndex:row])->name;
         }
@@ -116,7 +117,35 @@ NSMutableArray *statsArray;
             return ((Player *)[_t2->playerArray objectAtIndex:row])->name;
         }
     }
-    return @"erwe";
+    else if (pickerView == _passeur1PickerView){
+        
+        if(row == marqueurIndex){
+            return @"Aucun";
+        }
+        
+        if([_teamPickerView selectedRowInComponent:0] == 0){
+            return ((Player *)[_t1->playerArray objectAtIndex:row])->name;
+        }
+        if([_teamPickerView selectedRowInComponent:0] == 1){
+            return ((Player *)[_t2->playerArray objectAtIndex:row])->name;
+        }
+        
+    }
+    else{
+        
+        if(row == marqueurIndex || row == passeur1Index){
+            return @"Aucun";
+        }
+        
+        if([_teamPickerView selectedRowInComponent:0] == 0){
+            return ((Player *)[_t1->playerArray objectAtIndex:row])->name;
+        }
+        if([_teamPickerView selectedRowInComponent:0] == 1){
+            return ((Player *)[_t2->playerArray objectAtIndex:row])->name;
+        }
+    }
+    
+    return @"Joueur";
 
 }
 
@@ -125,6 +154,14 @@ NSMutableArray *statsArray;
     if(pickerView == _teamPickerView){
         [_marqueurPickerView reloadAllComponents];
         [_passeur1PickerView reloadAllComponents];
+        [_passeur2PickerView reloadAllComponents];
+    }
+    else if(pickerView == _marqueurPickerView){
+        marqueurIndex = [_marqueurPickerView selectedRowInComponent:0];
+        [_passeur1PickerView reloadAllComponents];
+        [_passeur2PickerView reloadAllComponents];
+    }else if(pickerView == _passeur1PickerView){
+        passeur1Index = [_passeur1PickerView selectedRowInComponent:0];
         [_passeur2PickerView reloadAllComponents];
     }
 }
@@ -143,33 +180,44 @@ NSMutableArray *statsArray;
 - (IBAction)addGoal:(UIButton *)sender {
     if([_teamPickerView selectedRowInComponent:0] == 0){
         [[_t1->playerArray objectAtIndex: [_marqueurPickerView selectedRowInComponent:0]] addGoal];
-        [[_t1->playerArray objectAtIndex: [_passeur1PickerView selectedRowInComponent:0]] addPass];
-        [[_t1->playerArray objectAtIndex: [_passeur1PickerView selectedRowInComponent:0]] addPass];
+        
+        if(![[self pickerView:_passeur1PickerView titleForRow:[_passeur1PickerView selectedRowInComponent:0] forComponent:0]  isEqual: @"Aucun"]){
+            [[_t1->playerArray objectAtIndex: [_passeur1PickerView selectedRowInComponent:0]] addPass];
+        }
+        if(![[self pickerView:_passeur2PickerView titleForRow:[_passeur2PickerView selectedRowInComponent:0] forComponent:0]  isEqual: @"Aucun"]){
+            [[_t1->playerArray objectAtIndex: [_passeur2PickerView selectedRowInComponent:0]] addPass];
+        }
+        
         _team1ScoreLabel.text = [NSString stringWithFormat:@"%li", [_team1ScoreLabel.text integerValue] + 1];
         [_tableViewTeam1 reloadData];
-        [self addStats:_t1 marqueur: [_t1->playerArray objectAtIndex: [_marqueurPickerView selectedRowInComponent:0]]
-              passeur1:[_t1->playerArray objectAtIndex: [_passeur1PickerView selectedRowInComponent:0]]
-                        passeur2:[_t1->playerArray objectAtIndex: [_passeur1PickerView selectedRowInComponent:0]]
+        [self addStats:_t1 marqueur: [self pickerView:_marqueurPickerView titleForRow:[_marqueurPickerView selectedRowInComponent:0] forComponent:0]
+              passeur1:[self pickerView:_passeur1PickerView titleForRow:[_passeur1PickerView selectedRowInComponent:0] forComponent:0]
+                        passeur2:[self pickerView:_passeur2PickerView titleForRow:[_passeur2PickerView selectedRowInComponent:0] forComponent:0]
                                   period:_numPeriod.text];
     }
     if([_teamPickerView selectedRowInComponent:0] == 1){
         [[_t2->playerArray objectAtIndex: [_marqueurPickerView selectedRowInComponent:0]] addGoal];
-        [[_t2->playerArray objectAtIndex: [_passeur1PickerView selectedRowInComponent:0]] addPass];
-        [[_t2->playerArray objectAtIndex: [_passeur2PickerView selectedRowInComponent:0]] addPass];
+        
+        if(![[self pickerView:_passeur1PickerView titleForRow:[_passeur1PickerView selectedRowInComponent:0] forComponent:0]  isEqual: @"Aucun"]){
+            [[_t2->playerArray objectAtIndex: [_passeur1PickerView selectedRowInComponent:0]] addPass];
+        }
+        if(![[self pickerView:_passeur2PickerView titleForRow:[_passeur2PickerView selectedRowInComponent:0] forComponent:0]  isEqual: @"Aucun"]){
+            [[_t2->playerArray objectAtIndex: [_passeur2PickerView selectedRowInComponent:0]] addPass];
+        }
+        
         _team2ScoreLabel.text = [NSString stringWithFormat:@"%li", [_team2ScoreLabel.text integerValue] + 1];
         [_tableViewTeam2 reloadData];
-        [self addStats:_t2 marqueur: [_t2->playerArray objectAtIndex: [_marqueurPickerView selectedRowInComponent:0]]
-              passeur1:[_t2->playerArray objectAtIndex: [_passeur1PickerView selectedRowInComponent:0]]
-              passeur2:[_t2->playerArray objectAtIndex: [_passeur1PickerView selectedRowInComponent:0]]
+        [self addStats:_t2 marqueur: [self pickerView:_marqueurPickerView titleForRow:[_marqueurPickerView selectedRowInComponent:0] forComponent:0]
+              passeur1:[self pickerView:_passeur1PickerView titleForRow:[_passeur1PickerView selectedRowInComponent:0] forComponent:0]
+              passeur2:[self pickerView:_passeur2PickerView titleForRow:[_passeur2PickerView selectedRowInComponent:0] forComponent:0]
                 period:_numPeriod.text];
     }
     
-    // TO DO alert
 }
 
 
-- (void)addStats:(Team *)team marqueur:(Player *)marqueur passeur1:(Player *)passeur1 passeur2:(Player *)passeur2 period:(NSString *) period{
-    [statsArray addObject: [NSString stringWithFormat: @"period %@, Equipe : %@ -BUT : %@, AIDES : %@ %@", period, team->name, marqueur->name, passeur1->name, passeur2->name]];
+- (void)addStats:(Team *)team marqueur:(NSString *)marqueur passeur1:(NSString *)passeur1 passeur2:(NSString *)passeur2 period:(NSString *) period{
+    [statsArray addObject: [NSString stringWithFormat: @"Periode %@, Equipe : %@ -BUT : %@, AIDES : %@ %@", period, team->name, marqueur, passeur1, passeur2]];
 
 }
 @end

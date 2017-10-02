@@ -17,6 +17,7 @@
     number=aNumber;
     but=0;
     pass=0;
+    point = 0;
     
     return self;
 }
@@ -29,6 +30,8 @@
     pass ++;
 }
 //- (void) setBut:(int )
+
+
 
 
 

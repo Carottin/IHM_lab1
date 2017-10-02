@@ -5,7 +5,7 @@
 //  Created by Peyrot, Michael on 17-09-28.
 //  Copyright © 2017 Peyrot, Michael. All rights reserved.
 //
-
+#import "ThirdViewController.h"
 #import "SecondViewController.h"
 #import "ViewController.h"
 #import "MyCell.h"
@@ -163,13 +163,28 @@ NSMutableArray *statsArray;
               passeur2:[_t2->playerArray objectAtIndex: [_passeur1PickerView selectedRowInComponent:0]]
                 period:_numPeriod.text];
     }
-    
-    // TO DO alert
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GOAL" message:@"le but est bien entré" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+
+
+
+
+
 }
 
 
 - (void)addStats:(Team *)team marqueur:(Player *)marqueur passeur1:(Player *)passeur1 passeur2:(Player *)passeur2 period:(NSString *) period{
     [statsArray addObject: [NSString stringWithFormat: @"period %@, Equipe : %@ -BUT : %@, AIDES : %@ %@", period, team->name, marqueur->name, passeur1->name, passeur2->name]];
 
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    ThirdViewController *myThirdViewController = (ThirdViewController *)segue.destinationViewController;
+    myThirdViewController.statsArray = statsArray;
+    myThirdViewController.t1 = _t1;
+    myThirdViewController.t2 = _t2;
+    
 }
 @end

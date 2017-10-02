@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3F3EF6FD979BEF36742C630229792C3696162B1E+++8E1D70D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3F3EF6FD979BEF36742C630229792C3696162B1E+++D8061B7" : 9223372036854775807,
+    "3F3EF6FD979BEF36742C630229792C3696162B1E+++8E1D70D" : 9223372036854775807,
+    "3F3EF6FD979BEF36742C630229792C3696162B1E+++7625890" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "50A11725-B3F6-4B3E-8FC4-168220D2DF1D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3F3EF6FD979BEF36742C630229792C3696162B1E+++D8061B7" : "",
+    "3F3EF6FD979BEF36742C630229792C3696162B1E+++8E1D70D" : "GTI350_HockeyCosom\/",
+    "3F3EF6FD979BEF36742C630229792C3696162B1E+++7625890" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "HockeyCosom",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HockeyCosom.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/m3s23X\/GTI350_HockeyCosom.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3F3EF6FD979BEF36742C630229792C3696162B1E+++7625890"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/m3s23X\/GTI350_HockeyCosom.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3F3EF6FD979BEF36742C630229792C3696162B1E+++8E1D70D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/m3s23X\/GTI350_HockeyCosom.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3F3EF6FD979BEF36742C630229792C3696162B1E+++D8061B7"
+    }
+  ]
+}

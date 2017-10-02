@@ -15,6 +15,7 @@
 		1F4224FD1F6B056600F38653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4224FB1F6B056600F38653 /* LaunchScreen.storyboard */; };
 		1FF67ADA1F7D767E00CDBF81 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF67AD91F7D767E00CDBF81 /* SecondViewController.m */; };
 		4C78257B1F7CAF210077FE6E /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C78257A1F7CAF210077FE6E /* MyCell.xib */; };
+		8213CA6B1F82A0BE00DB6C42 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8213CA6A1F82A0BE00DB6C42 /* ThirdViewController.m */; };
 		827E6B9F1F74349C00219038 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E6B9E1F74349C00219038 /* Player.m */; };
 		827E6BA21F7434C200219038 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E6BA11F7434C200219038 /* Team.m */; };
 		827E6BAB1F74670A00219038 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 827E6BAA1F74670A00219038 /* MyCell.m */; };
@@ -34,6 +35,8 @@
 		1FF67AD91F7D767E00CDBF81 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		1FF67ADB1F7D769200CDBF81 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		4C78257A1F7CAF210077FE6E /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		8213CA6A1F82A0BE00DB6C42 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		8213CA6C1F82A0CE00DB6C42 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		827E6B9E1F74349C00219038 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		827E6BA01F7434A800219038 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		827E6BA11F7434C200219038 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 				827E6BA31F7434D000219038 /* Team.h */,
 				1FF67AD91F7D767E00CDBF81 /* SecondViewController.m */,
 				1FF67ADB1F7D769200CDBF81 /* SecondViewController.h */,
+				8213CA6A1F82A0BE00DB6C42 /* ThirdViewController.m */,
+				8213CA6C1F82A0CE00DB6C42 /* ThirdViewController.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 			files = (
 				827E6BA21F7434C200219038 /* Team.m in Sources */,
 				827E6B9F1F74349C00219038 /* Player.m in Sources */,
+				8213CA6B1F82A0BE00DB6C42 /* ThirdViewController.m in Sources */,
 				1F4224F51F6B056600F38653 /* ViewController.m in Sources */,
 				1FF67ADA1F7D767E00CDBF81 /* SecondViewController.m in Sources */,
 				1F4224F21F6B056600F38653 /* AppDelegate.m in Sources */,

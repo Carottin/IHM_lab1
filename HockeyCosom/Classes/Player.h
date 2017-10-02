@@ -15,6 +15,7 @@
     int but;
     int number;
     int pass;
+    int point;
 }
 - (id)initialize:(NSString *)aName number:(int)number;
 

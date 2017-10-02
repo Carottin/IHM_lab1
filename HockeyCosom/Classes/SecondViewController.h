@@ -9,6 +9,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Team.h"
+#import "Player.h"
+
 
 @interface SecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource>
 

@@ -6,8 +6,20 @@
 //  Copyright © 2017 Peyrot, Michael. All rights reserved.
 //
 
-#ifndef ThirdViewController_h
-#define ThirdViewController_h
+#import <UIKit/UIKit.h>
+#import "Team.h"
+#import "Player.h"
+
+#import <Foundation/Foundation.h>
 
 
-#endif /* ThirdViewController_h */
+
+@interface ThirdViewController : UIViewController
+
+@property(nonatomic, retain) Team *t1;
+@property(nonatomic, retain) Team *t2;
+
+@property(nonatomic, retain) NSMutableArray *statsArray;
+
+
+@end

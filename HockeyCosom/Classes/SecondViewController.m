@@ -212,6 +212,10 @@ NSInteger *passeur1Index = 0;
               passeur2:[self pickerView:_passeur2PickerView titleForRow:[_passeur2PickerView selectedRowInComponent:0] forComponent:0]
                 period:_numPeriod.text];
     }
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GOAL" message:@"le but est bien entré" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
 
